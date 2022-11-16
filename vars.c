@@ -20,6 +20,12 @@ int is_chain(info_t *info, char *buf, size_t *p)
 	}
 	else if (buf[j] == '&' && buf[j + 1] == '&')
 	{
+		buf[j] = 0;
+		j++;
+		info->cmd_buf_type = CMD_AND;
+	}
+	else if (buf[j] == ';')
+	{
 		buf[j] = 0; /* replace semicolon with null */
 		info->cmd_buf_type = CMD_CHAIN;
 	}
