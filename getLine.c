@@ -18,7 +18,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 		/*bfree((void **)info->cmd_buf);*/
 		free(*buf);
 		*buf = NULL;
-		signal(SIGINT, sigintHandler);
+		/**strsignal(SIGINT, sigintHandler);*/
 #if USE_GETLINE
 		r = getline(buf, &len_p, stdin);
 #else
@@ -149,7 +149,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	p = new_p;
 
 	if (length)
-		*lenght = s;
+		*length = s;
 	*ptr = p;
 	return (s);
 }

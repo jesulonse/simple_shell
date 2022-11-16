@@ -1,6 +1,7 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
 
+#include <sys/wait.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -176,7 +177,7 @@ void remove_comments(char *);
 /* toem_builtin.c */
 int _myexit(info_t *);
 int _mycd(info_t *);
-int myhelp(info_t *);
+int _myhelp(info_t *);
 
 /* toem_builtin1.c */
 int _myhistory(info_t *);
