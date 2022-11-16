@@ -31,7 +31,6 @@ int hsh(info_t *info, char **av)
 	}
 	write_history(info);
 	free_info(info, 1);
-/*r: implicit declaration of function ‘wait’ [-Werror=implicit-function-declaration]*/
 	if (!interactive(info) && info->status)
 		exit(info->status);
 	if (builtin_ret == -2)
